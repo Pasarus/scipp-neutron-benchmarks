@@ -13,17 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Clone Scipp
+      - name: Clone Scipp Neutron
         shell: bash -l {0}
-        run: git clone https://github.com/scipp/scipp repo
+        run: git clone https://github.com/scipp/scippneutron repo
 
-      - name: Setup Mambaforge and Scipp dev env
+      - name: Setup Mambaforge and Scipp Neutron dev env
         uses: conda-incubator/setup-miniconda@v2.1.1
         with:
           miniforge-version: latest
           miniforge-variant: Mambaforge
-          environment-file: repo/scipp-developer.yml
-          activate-environment: scipp-developer
+          environment-file: repo/scippneutron-developer.yml
+          activate-environment: scippneutron-developer
           auto-activate-base: false
 
       - name: Install asv
