@@ -1,4 +1,4 @@
-name: Benchmark scipp
+name: Benchmark scippneutron
 
 on: 
   schedule:
