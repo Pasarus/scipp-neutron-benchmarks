@@ -20,7 +20,7 @@
        "in-dir={env_dir} python -c 'import shutil\nshutil.copytree(\"SCIPP_INSTALL/include\", \"include\", dirs_exist_ok=True)\nshutil.copytree(\"SCIPP_INSTALL/lib\", \"lib\", dirs_exist_ok=True)\nshutil.copytree(\"SCIPP_INSTALL/scippneutron\", \"lib/python3.9/scippneutron\", dirs_exist_ok=True)\nshutil.copytree(\"SCIPP_INSTALL/scippneutron\", \"lib/python3.8/scippneutron\", dirs_exist_ok=True)\nshutil.copytree(\"SCIPP_INSTALL/scippneutron\", \"lib/python3.7/scippneutron\", dirs_exist_ok=True)'"
      ],
      "uninstall_command": [
-       "return-code=any in-dir={env_dir} python -c 'import shutil\nshutil.rmtree(\"lib/python3.7/scipp\", ignore_errors=True)\nshutil.rmtree(\"lib/python3.8/scipp\", ignore_errors=True)\nshutil.rmtree(\"lib/python3.9/scipp\", ignore_errors=True)'"
+       "return-code=any in-dir={env_dir} python -c 'import shutil\nshutil.rmtree(\"lib/python3.7/scippneutron\", ignore_errors=True)\nshutil.rmtree(\"lib/python3.8/scippneutron\", ignore_errors=True)\nshutil.rmtree(\"lib/python3.9/scippneutron\", ignore_errors=True)'"
      ],
      "build_command": [
        "cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DPython_EXECUTABLE='$(command -v python3)' -DCMAKE_INSTALL_PREFIX=../SCIPP_INSTALL -B build",
@@ -76,7 +76,7 @@
     //
      "matrix": {
          "ninja": [""],
-         "scipp": [""],
+         "scipp::scipp": [""],
          "conan": [""],
          "cmake": [""],
          "pip": [""],
@@ -93,8 +93,9 @@
          "tbb": [""],
          "h5py": [""],
          "python-confluent-kafka": [""],
-         "ess-streaming-data-types": [""],
-         "scipy": [""]
+         "ess-dmsc::ess-streaming-data-types": [""],
+         "scipy": [""],
+         "pooch": [""]
      },
 
     // Combinations of libraries/python versions can be excluded/included
