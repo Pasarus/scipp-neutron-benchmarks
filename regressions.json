@@ -1,1 +1,1 @@
-{"regressions": []}
+{"regressions": [["load_nexus.LoadNexus.time_load_event_nexus", "graphs/appdirs/branch-main/cmake/conan/cpu-2 Core CPU/ess-dmsc__ess-streaming-data-types/h5py/ipykernel-6.3.1/ipympl/ipywidgets/machine-cloud-container/mantid-framework/matplotlib-base/ninja/numpy/os-Ubuntu latest/pip/pooch/python-3.9/python-configuration/python-confluent-kafka/pythreejs/pyyaml/ram-7GB/scipp__scipp/scipy/tbb/load_nexus.LoadNexus.time_load_event_nexus.json", {}, null, 5.773585534499944, 4.647523122500047, [[null, 1414, 4.647523122500047, 5.773585534499944]]]]}
