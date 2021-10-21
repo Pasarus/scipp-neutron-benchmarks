@@ -15,24 +15,8 @@
         "version": "9bb61e37c240f4221eff71f827efb0f1cfb5371f7c6b0e72f79b9ca92578e5e9",
         "warmup_time": -1
     },
-    "transform_coords.TransformCoords.time_dspacing_to_tof": {
-        "code": "class TransformCoords:\n    def time_dspacing_to_tof(self):\n        scn.convert(self.var_dspacing, \"dspacing\", \"tof\", False)\n\n    def setup(self):\n        da = scn.load_nexus(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_dspacing = scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
-        "min_run_count": 2,
-        "name": "transform_coords.TransformCoords.time_dspacing_to_tof",
-        "number": 0,
-        "param_names": [],
-        "params": [],
-        "processes": 2,
-        "repeat": 0,
-        "sample_time": 0.01,
-        "timeout": 60.0,
-        "type": "time",
-        "unit": "seconds",
-        "version": "ace4ce010606b0d1a2601160cc3cfcc43dd90a58e48b6a75890bf12bea3684f4",
-        "warmup_time": -1
-    },
     "transform_coords.TransformCoords.time_energy_to_tof": {
-        "code": "class TransformCoords:\n    def time_energy_to_tof(self):\n        scn.convert(self.var_energy, \"energy\", \"tof\", False)\n\n    def setup(self):\n        da = scn.load_nexus(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_dspacing = scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
+        "code": "class TransformCoords:\n    def time_energy_to_tof(self):\n        scn.convert(self.var_energy, \"energy\", \"tof\", False)\n\n    def setup(self):\n        da = scn.load(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
         "min_run_count": 2,
         "name": "transform_coords.TransformCoords.time_energy_to_tof",
         "number": 0,
@@ -44,11 +28,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "b47fcc695be1a265f33ee815f7c75711143910adbe6cf0ff08c00739dcbfbbcc",
+        "version": "f1ea8beffb41e75997f96056160ef6dd12d9afb53546d00f7e0cb2b307a616bb",
         "warmup_time": -1
     },
     "transform_coords.TransformCoords.time_tof_to_dspacing": {
-        "code": "class TransformCoords:\n    def time_tof_to_dspacing(self):\n        scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n\n    def setup(self):\n        da = scn.load_nexus(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_dspacing = scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
+        "code": "class TransformCoords:\n    def time_tof_to_dspacing(self):\n        scn.convert(self.var_tof, \"tof\", \"dspacing\", True)\n\n    def setup(self):\n        da = scn.load(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
         "min_run_count": 2,
         "name": "transform_coords.TransformCoords.time_tof_to_dspacing",
         "number": 0,
@@ -60,11 +44,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "4e8d748c9c49cc403fa5e2501009b684ffbac04de809c2e832dadbb0eae323e0",
+        "version": "76d3e8bdf45621127e026f90298e8f292d01ddb57cb7caf05a5ce555a659d8ac",
         "warmup_time": -1
     },
     "transform_coords.TransformCoords.time_tof_to_energy": {
-        "code": "class TransformCoords:\n    def time_tof_to_energy(self):\n        scn.convert(self.var_tof, \"tof\", \"energy\", False)\n\n    def setup(self):\n        da = scn.load_nexus(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_dspacing = scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
+        "code": "class TransformCoords:\n    def time_tof_to_energy(self):\n        scn.convert(self.var_tof, \"tof\", \"energy\", False)\n\n    def setup(self):\n        da = scn.load(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
         "min_run_count": 2,
         "name": "transform_coords.TransformCoords.time_tof_to_energy",
         "number": 0,
@@ -76,27 +60,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "3aa15bce3c77c54efac5e4d9ae8a0c0b4cd8abcb844dc43a2a2d9433b7c37f1d",
-        "warmup_time": -1
-    },
-    "transform_coords.TransformCoords.time_tof_to_energy_transfer": {
-        "code": "class TransformCoords:\n    def time_tof_to_energy_transfer(self):\n        scn.convert(self.var_tof, \"tof\", \"energy_transfer\", False)\n\n    def setup(self):\n        da = scn.load_nexus(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_dspacing = scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
-        "min_run_count": 2,
-        "name": "transform_coords.TransformCoords.time_tof_to_energy_transfer",
-        "number": 0,
-        "param_names": [],
-        "params": [],
-        "processes": 2,
-        "repeat": 0,
-        "sample_time": 0.01,
-        "timeout": 60.0,
-        "type": "time",
-        "unit": "seconds",
-        "version": "66ea45efdc54895e7ccb26cfdb13c240948627689343513e10efcd7c664cfd20",
+        "version": "32774381c7e0285d159959187b4537339285cc2573292bc6b39f5edd04d4bc0b",
         "warmup_time": -1
     },
     "transform_coords.TransformCoords.time_tof_to_wavelength": {
-        "code": "class TransformCoords:\n    def time_tof_to_wavelength(self):\n        scn.convert(self.var_wavelength, \"wavelength\", \"tof\", False)\n\n    def setup(self):\n        da = scn.load_nexus(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_dspacing = scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
+        "code": "class TransformCoords:\n    def time_tof_to_wavelength(self):\n        scn.convert(self.var_wavelength, \"wavelength\", \"tof\", False)\n\n    def setup(self):\n        da = scn.load(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
         "min_run_count": 2,
         "name": "transform_coords.TransformCoords.time_tof_to_wavelength",
         "number": 0,
@@ -108,11 +76,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "675872a1aff409f12c437b56d59a12ac1494bdcd98c23e52dd9be5a841994e56",
+        "version": "46879c3a68b31604accd5a00f4187eb567d166242d70d944aa010a5d6f8de380",
         "warmup_time": -1
     },
     "transform_coords.TransformCoords.time_wavelength_to_tof": {
-        "code": "class TransformCoords:\n    def time_wavelength_to_tof(self):\n        scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n\n    def setup(self):\n        da = scn.load_nexus(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_dspacing = scn.convert(self.var_tof, \"tof\", \"dspacing\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
+        "code": "class TransformCoords:\n    def time_wavelength_to_tof(self):\n        scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n\n    def setup(self):\n        da = scn.load(scn.data.get_path('PG3_4844_event.nxs'))\n        self.var_tof = da\n        self.var_wavelength = scn.convert(self.var_tof, \"tof\", \"wavelength\", False)\n        self.var_energy = scn.convert(self.var_tof, \"tof\", \"energy\", False)",
         "min_run_count": 2,
         "name": "transform_coords.TransformCoords.time_wavelength_to_tof",
         "number": 0,
@@ -124,7 +92,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "24fefa5c7e4c423eb51ea3acda9476715643d01d6e58debc5d02b4adf2389497",
+        "version": "d4710ab73daad9eb187b2c50c320802720ae09b880a656f3ac5284d75fea178b",
         "warmup_time": -1
     },
     "version": 2
